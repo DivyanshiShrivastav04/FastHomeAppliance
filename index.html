@@ -682,7 +682,7 @@
           </div>
           <div class="footer-section">
             <h4>Contact Info</h4>
-            <p id="user-address"></p>
+            <p id="location"></p>
             <div class="footer-contact">
               <p><a href="tel:+14075554321">+1(407) 555-4321</a></p>
               <p>
@@ -706,23 +706,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      fetch("http://ip-api.com/json/")
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.status === "success") {
-            const address = `${data.city}, ${data.regionName}, ${data.country}`;
-            document.getElementById("user-address").textContent = address;
-          } else {
-            document.getElementById("user-address").textContent =
-              "Location not available.";
-          }
-        })
-        .catch(() => {
-          document.getElementById("user-address").textContent =
-            "Error fetching location.";
-        });
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
