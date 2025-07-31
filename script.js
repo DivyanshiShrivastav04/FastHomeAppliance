@@ -319,9 +319,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => {
       const city = data.city || "";
-      const state = data.region || "";
-      const country = data.country_name || "";
-      document.getElementById("location").textContent = `${city}, ${state}, ${country}`;
+     //const state = data.region || "";
+      //const country = data.country_name || "";
+      document.getElementById("location").textContent = `${city}`;
     })
     .catch(() => {
       document.getElementById("location").textContent = "Location unavailable";
