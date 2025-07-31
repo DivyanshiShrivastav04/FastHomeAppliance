@@ -312,3 +312,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("https://ipapi.co/json/")
+    .then(res => res.json())
+    .then(data => {
+      const city = data.city || "";
+      const state = data.region || "";
+      const country = data.country_name || "";
+      document.getElementById("location").textContent = `${city}, ${state}, ${country}`;
+    })
+    .catch(() => {
+      document.getElementById("location").textContent = "Location unavailable";
+    });
+});
