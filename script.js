@@ -327,3 +327,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("location").textContent = "Location unavailable";
     });
 });
+
+  fetch("https://ipapi.co/json/")
+    .then(res => res.json())
+    .then(data => {
+      const city = data.city || "";
+      document.title = `FastHomeAppliance - Expert Appliance Repair Services in ${city}`;
+    })
+    .catch(() => {
+      document.title = "FastHomeAppliance - Expert Appliance Repair Services in San Francisco";
+    });
